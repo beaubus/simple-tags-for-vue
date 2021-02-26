@@ -18,12 +18,15 @@
 
         <div :class="tailwind ? 'mt-4 flex flex-wrap' : null">
             <div v-for="tag in existing_without_selected"
-                 :class="tailwind ? 'existing-tags bg-blue-200 rounded-2xl text-white mr-2 mb-2 flex items-center px-2' : null"
+                 :class="tailwind ? 'existing-tags bg-blue-200 rounded-2xl text-white mr-2 mb-2 flex items-center pl-2 pr-1' : null"
                  style="cursor:pointer"
             >
                 <span @click="addTag">{{ tag }}</span>
-
-                <span v-if="unused.includes(tag)" @click="destroy(tag, $event)" style="color:#ffeeee">ⓧ</span>
+                &nbsp; &nbsp;
+                <span v-if="unused.includes(tag)"
+                      @click="destroy(tag, $event)"
+                      :class="tailwind ? 'text-blue-300' : null"
+                >ⓧ</span>
             </div>
         </div>
     </div>
