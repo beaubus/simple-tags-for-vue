@@ -63,12 +63,16 @@ function _nonIterableRest() {
       type: Array,
       default: []
     },
+    unused: {
+      type: Array,
+      default: []
+    },
     tailwind: {
       type: Boolean,
       default: true
     }
   },
-  emits: ['update:modelValue'],
+  emits: ['update:modelValue', 'destroy'],
   data: function data() {
     return {
       tags: this.modelValue,
@@ -93,6 +97,18 @@ function _nonIterableRest() {
       });
       this.tags.splice(index, 1);
       this.$emit('update:modelValue', this.tags);
+    },
+    destroy: function destroy(tag, event) {
+      if (event.target.style.filter === 'brightness(75%)') {
+        this.$emit('destroy', tag);
+        var index = this.existing_tags.findIndex(function (t) {
+          return t === tag;
+        });
+        this.existing_tags.splice(index, 1);
+        return;
+      }
+
+      event.target.style.filter = 'brightness(75%)';
     }
   },
   computed: {
@@ -150,7 +166,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       onClick: _cache[3] || (_cache[3] = function () {
         return $options.addTag && $options.addTag.apply($options, arguments);
       })
-    }, vue.toDisplayString(tag), 1)], 2);
+    }, vue.toDisplayString(tag), 1), $props.unused.includes(tag) ? (vue.openBlock(), vue.createBlock("span", {
+      key: 0,
+      onClick: function onClick($event) {
+        return $options.destroy(tag, $event);
+      },
+      style: {
+        "color": "#ffeeee"
+      }
+    }, "ⓧ", 8, ["onClick"])) : vue.createCommentVNode("", true)], 2);
   }), 256))], 2)]);
 }script.render = render;// Import vue component
 // IIFE injects install function into component, allowing component

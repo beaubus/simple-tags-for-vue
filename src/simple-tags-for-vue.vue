@@ -22,6 +22,8 @@
                  style="cursor:pointer"
             >
                 <span @click="addTag">{{ tag }}</span>
+
+                <span v-if="unused.includes(tag)" @click="destroy(tag, $event)" style="color:#ffeeee">ⓧ</span>
             </div>
         </div>
     </div>
@@ -44,13 +46,18 @@ export default {
             default: []
         },
 
+        unused: {
+            type: Array,
+            default: []
+        },
+
         tailwind: {
             type: Boolean,
             default: true
         }
     },
 
-    emits: ['update:modelValue'],
+    emits: ['update:modelValue', 'destroy'],
 
     data()
     {
@@ -80,6 +87,20 @@ export default {
             let index = this.tags.findIndex(t => t === tag);
             this.tags.splice(index, 1);
             this.$emit('update:modelValue', this.tags);
+        },
+
+        destroy(tag, event)
+        {
+            if (event.target.style.filter === 'brightness(75%)') {
+                this.$emit('destroy', tag);
+
+                let index = this.existing_tags.findIndex(t => t === tag);
+                this.existing_tags.splice(index, 1);
+
+                return;
+            }
+
+            event.target.style.filter = 'brightness(75%)'
         }
     },
 

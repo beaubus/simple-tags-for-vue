@@ -54,8 +54,9 @@ $model->syncTags($tags);
 ## Properties
 | Name            | Type              | Default     | Description                                        |
 | ---             | ---               | ---         | ---                                                |
-| modelValue      | Array             | []          | value for v-model                                  |
-| existing        | Array             | []          | list of existing tags (used in suggestions)        |
+| modelValue      | Array             | []          | Value for v-model                                  |
+| existing        | Array             | []          | List of existing tags (used in suggestions)        |
+| unused          | Array             | []          | List of unused tags (can be permanently deleted)   |
 | tailwind        | Boolean           | true        | Style with tailwindcss                             |
 
 
@@ -63,6 +64,7 @@ $model->syncTags($tags);
 | Name               | Description              |
 | ---                | ---                      |
 | update:modelValue  | Update event for v-model |
+| destroy            | Permanently delete tag   |
 
 
 ## License

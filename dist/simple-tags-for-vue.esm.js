@@ -1,4 +1,4 @@
-import { openBlock, createBlock, createVNode, Fragment, renderList, toDisplayString, withDirectives, withKeys, withModifiers, vModelText, createTextVNode } from 'vue';
+import { openBlock, createBlock, createVNode, Fragment, renderList, toDisplayString, withDirectives, withKeys, withModifiers, vModelText, createCommentVNode, createTextVNode } from 'vue';
 
 var script = {
   name: 'tags_input',
@@ -11,12 +11,16 @@ var script = {
       type: Array,
       default: []
     },
+    unused: {
+      type: Array,
+      default: []
+    },
     tailwind: {
       type: Boolean,
       default: true
     }
   },
-  emits: ['update:modelValue'],
+  emits: ['update:modelValue', 'destroy'],
 
   data() {
     return {
@@ -40,6 +44,17 @@ var script = {
       let index = this.tags.findIndex(t => t === tag);
       this.tags.splice(index, 1);
       this.$emit('update:modelValue', this.tags);
+    },
+
+    destroy(tag, event) {
+      if (event.target.style.filter === 'brightness(75%)') {
+        this.$emit('destroy', tag);
+        let index = this.existing_tags.findIndex(t => t === tag);
+        this.existing_tags.splice(index, 1);
+        return;
+      }
+
+      event.target.style.filter = 'brightness(75%)';
     }
 
   },
@@ -87,7 +102,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }
     }, [createVNode("span", {
       onClick: _cache[3] || (_cache[3] = (...args) => $options.addTag && $options.addTag(...args))
-    }, toDisplayString(tag), 1)], 2);
+    }, toDisplayString(tag), 1), $props.unused.includes(tag) ? (openBlock(), createBlock("span", {
+      key: 0,
+      onClick: $event => $options.destroy(tag, $event),
+      style: {
+        "color": "#ffeeee"
+      }
+    }, "ⓧ", 8, ["onClick"])) : createCommentVNode("", true)], 2);
   }), 256))], 2)]);
 }
 
