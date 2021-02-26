@@ -126,6 +126,8 @@ function _nonIterableRest() {
   }
 };var _hoisted_1 = /*#__PURE__*/vue.createTextVNode("     ");
 
+var _hoisted_2 = /*#__PURE__*/vue.createTextVNode("     ");
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("div", null, [vue.createVNode("div", {
     class: $props.tailwind ? 'flex flex-wrap' : null
@@ -158,7 +160,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     class: $props.tailwind ? 'mt-4 flex flex-wrap' : null
   }, [(vue.openBlock(true), vue.createBlock(vue.Fragment, null, vue.renderList($options.existing_without_selected, function (tag) {
     return vue.openBlock(), vue.createBlock("div", {
-      class: $props.tailwind ? 'existing-tags bg-blue-200 rounded-2xl text-white mr-2 mb-2 flex items-center px-2' : null,
+      class: $props.tailwind ? 'existing-tags bg-blue-200 rounded-2xl text-white mr-2 mb-2 flex items-center pl-2 pr-1' : null,
       style: {
         "cursor": "pointer"
       }
@@ -166,15 +168,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       onClick: _cache[3] || (_cache[3] = function () {
         return $options.addTag && $options.addTag.apply($options, arguments);
       })
-    }, vue.toDisplayString(tag), 1), $props.unused.includes(tag) ? (vue.openBlock(), vue.createBlock("span", {
+    }, vue.toDisplayString(tag), 1), _hoisted_2, $props.unused.includes(tag) ? (vue.openBlock(), vue.createBlock("span", {
       key: 0,
       onClick: function onClick($event) {
         return $options.destroy(tag, $event);
       },
-      style: {
-        "color": "#ffeeee"
-      }
-    }, "ⓧ", 8, ["onClick"])) : vue.createCommentVNode("", true)], 2);
+      class: $props.tailwind ? 'text-blue-300' : null
+    }, "ⓧ", 10, ["onClick"])) : vue.createCommentVNode("", true)], 2);
   }), 256))], 2)]);
 }script.render = render;// Import vue component
 // IIFE injects install function into component, allowing component

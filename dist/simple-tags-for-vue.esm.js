@@ -70,6 +70,8 @@ var script = {
 
 const _hoisted_1 = /*#__PURE__*/createTextVNode("     ");
 
+const _hoisted_2 = /*#__PURE__*/createTextVNode("     ");
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock("div", null, [createVNode("div", {
     class: $props.tailwind ? 'flex flex-wrap' : null
@@ -96,19 +98,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     class: $props.tailwind ? 'mt-4 flex flex-wrap' : null
   }, [(openBlock(true), createBlock(Fragment, null, renderList($options.existing_without_selected, tag => {
     return openBlock(), createBlock("div", {
-      class: $props.tailwind ? 'existing-tags bg-blue-200 rounded-2xl text-white mr-2 mb-2 flex items-center px-2' : null,
+      class: $props.tailwind ? 'existing-tags bg-blue-200 rounded-2xl text-white mr-2 mb-2 flex items-center pl-2 pr-1' : null,
       style: {
         "cursor": "pointer"
       }
     }, [createVNode("span", {
       onClick: _cache[3] || (_cache[3] = (...args) => $options.addTag && $options.addTag(...args))
-    }, toDisplayString(tag), 1), $props.unused.includes(tag) ? (openBlock(), createBlock("span", {
+    }, toDisplayString(tag), 1), _hoisted_2, $props.unused.includes(tag) ? (openBlock(), createBlock("span", {
       key: 0,
       onClick: $event => $options.destroy(tag, $event),
-      style: {
-        "color": "#ffeeee"
-      }
-    }, "ⓧ", 8, ["onClick"])) : createCommentVNode("", true)], 2);
+      class: $props.tailwind ? 'text-blue-300' : null
+    }, "ⓧ", 10, ["onClick"])) : createCommentVNode("", true)], 2);
   }), 256))], 2)]);
 }
 
