@@ -1,5 +1,15 @@
 # Simple tags component for Vue.js 3 
 
+<a href="https://www.npmjs.com/package/simple-tags-for-vue">
+    <img alt="npm" src="https://img.shields.io/npm/dt/simple-tags-for-vue?logo=npm">
+</a>
+
+<a href="https://github.com/beaubus/simple-tags-for-vue/blob/master/LICENSE">
+    <img alt="MIT" src="https://img.shields.io/github/license/beaubus/simple-tags-for-vue">
+</a>
+<br>
+<br>
+
 Attach or detach tags with suggestions. Styled with [tailwindcss](https://tailwindcss.com/) by default.
 
 ![](demo.gif)
