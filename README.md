@@ -7,6 +7,11 @@
 <a href="https://github.com/beaubus/simple-tags-for-vue/blob/master/LICENSE">
     <img alt="MIT" src="https://img.shields.io/github/license/beaubus/simple-tags-for-vue">
 </a>
+&nbsp;&nbsp;
+<a href="https://twitter.com/intent/follow?screen_name=daily_web_dev">
+    <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/daily_web_dev?style=social">
+</a>
+
 <br>
 <br>
 
