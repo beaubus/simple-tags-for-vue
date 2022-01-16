@@ -19,6 +19,8 @@ Attach or detach tags with suggestions. Styled with [tailwindcss](https://tailwi
 
 ![](demo.gif)
 
+<a target="_blank" href="https://www.beaubus.com/packages/#simple-tags-for-vue">Demo</a>
+
 ## Installation
 
 NPM
