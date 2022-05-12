@@ -50,7 +50,7 @@ components: {
 ```
 
 ### Styling
-If you have tailwindcss installed, you are good to go. If not, just turn it off `:tailwind="false"`, add `class="your-own-class"` and style it as you need.
+If you have [tailwindcss](https://tailwindcss.com/) installed, you are good to go. If not, just turn it off `:tailwind="false"`, add `class="your-own-class"` and style it as you need.
 
 ### Backend
 POST query of the form with simple-tags-for-vue results in an array of 'tags'.
