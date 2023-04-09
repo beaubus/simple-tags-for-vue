@@ -37,7 +37,7 @@ CDN
 ```js
 import simple_tags_for_vue from 'simple-tags-for-vue';
 
-// add to components section
+// add to the components section
 components: {
     'simple-tags-for-vue': simple_tags_for_vue
 }
