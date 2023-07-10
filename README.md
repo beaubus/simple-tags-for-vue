@@ -15,7 +15,7 @@
 <br>
 <br>
 
-Attach or detach tags with suggestions. Styled with [tailwindcss](https://tailwindcss.com/) by default.
+A package that allows you to attach or detach tags with ease, following provided suggestions. The tags are styled by default using [Tailwind CSS](https://tailwindcss.com/)
 
 ![](demo.gif)
 

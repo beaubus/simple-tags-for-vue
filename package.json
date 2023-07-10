@@ -1,7 +1,7 @@
 {
     "name": "simple-tags-for-vue",
-    "version": "1.1.5",
-    "description": "Attach or detach tags with suggestions. Vue 3. Styled with tailwindcss.",
+    "version": "1.1.6",
+    "description": "Attach or detach tags with suggestions. Vue 3. Styled with Tailwind CSS.",
     "author": "BEAUBUS",
     "license": "MIT",
     "main": "dist/simple-tags-for-vue.ssr.js",
