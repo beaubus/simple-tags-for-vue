@@ -1,6 +1,6 @@
 {
     "name": "simple-tags-for-vue",
-    "version": "1.1.6",
+    "version": "1.1.7",
     "description": "Attach or detach tags with suggestions. Vue 3. Styled with Tailwind CSS.",
     "author": "BEAUBUS",
     "license": "MIT",
@@ -52,6 +52,7 @@
     },
     "keywords": [
         "vue",
+        "vue.js",
         "vue3",
         "vue 3.0",
         "vuejs",
@@ -59,6 +60,7 @@
         "input",
         "tailwind",
         "tailwindcss",
+        "Tailwind CSS",
         "laravel",
         "tags input",
         "laravel tags",
