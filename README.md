@@ -19,6 +19,8 @@ A package that allows you to attach or detach tags with ease, following provided
 
 ![](demo.gif)
 
+<br>
+
 <a target="_blank" href="https://www.beaubus.com/packages/#simple-tags-for-vue">Demo</a>
 
 ## Installation
